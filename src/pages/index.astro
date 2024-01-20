@@ -14,18 +14,16 @@ import Layout from "../layouts/Layout.astro";
   title="Portafolio de Mauro Quinteros - Desarrollador y Programador web"
   description="Desarrollador backend"
 >
-  <main>
-    <Container id="about" class="pt-40 pb-24">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="/public/logo.jpg"
-        alt="logo"
-      />
-      <h1 class="text-white text-5xl font-bold flex items-center gap-x-4 pb-4">
+  <main class="px-4 lg:px-0">
+    <Container id="about" class="pt-24 md:pt-40 pb-24 text-white">
+      <img class="rounded-full size-12 mb-4" src="/logo.jpg" alt="logo" />
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-4 lg:pb-6"
+      >
         Hey, soy Mauro
         <Badge>Disponible para trabajar</Badge>
       </h1>
-      <h2 class="text-white text-2xl text-wrap">
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
         +15 años de experiencia.
         <span class="text-yellow-200/90"
           >Desarrollador Web y Creador de Contenido.</span
@@ -36,17 +34,17 @@ import Layout from "../layouts/Layout.astro";
         >
       </h2>
 
-      <nav class="flex gap-x-4 mt-8 text-white">
+      <nav class="flex flex-wrap gap-4 lg:gap-x-6 mt-8">
         <SocialBadge href="https://www.linkedin.com/in/mauroquinteroos/">
-          <LinkedInIcon class="size-6" />
+          <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialBadge>
         <SocialBadge href="https://github.com/mauroquinteroos">
-          <GithubIcon class="size-6" />
+          <GithubIcon class="size-4 md:size-6" />
           Github
         </SocialBadge>
         <SocialBadge href="mailto:quinterosmauro0599@gmail.com">
-          <MailIcon class="size-6" />
+          <MailIcon class="size-4 md:size-6" />
           hello@mauroquinteros.com
         </SocialBadge>
       </nav>
