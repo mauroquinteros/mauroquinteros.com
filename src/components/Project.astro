@@ -1,0 +1,56 @@
+---
+import NextjsIcon from "./icons/Nextjs.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+
+const tags = {
+  Next: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextjsIcon,
+  },
+  Tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+};
+
+const projects = [
+  {
+    title: "SVGL - A beautiful SVG library",
+    description:
+      "Created from scratch with Tailwind CSS and Next.js. It's a library of SVG icons that you can use in your projects. Optimized for performance and accessibility.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/svgl.webp",
+    tags: [tags.Next, tags.Tailwind],
+  },
+];
+---
+
+{
+  projects.map((project) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2">
+        {project.title}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{project.description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {project.tags.map((tag) => (
+          <li>
+            <span
+              class={`${tag.class} flex gap-x-2 items-center rounded-full text-xs px-2 py-1`}
+            >
+              {tag.name} <tag.icon class="size-4" />
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={project.image}
+        alt={project.description}
+      />
+    </article>
+  ))
+}

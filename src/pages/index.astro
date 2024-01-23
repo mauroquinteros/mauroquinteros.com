@@ -7,7 +7,9 @@ import GithubIcon from "../components/icons/Github.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import BriefcaseIcon from "../components/icons/Briefcase.astro";
 import MailIcon from "../components/icons/Mail.astro";
+import CodeIcon from "../components/icons/Code.astro";
 import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
 ---
 
 <Layout
@@ -15,7 +17,7 @@ import Layout from "../layouts/Layout.astro";
   description="Desarrollador backend"
 >
   <main class="px-4 lg:px-0">
-    <Container id="about" class="pt-24 md:pt-40 pb-24 text-white">
+    <Container id="about" class="py-24 md:pt-40 md:pb-32 text-white">
       <img class="rounded-full size-12 mb-4" src="/logo.jpg" alt="logo" />
       <h1
         class="text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-4 lg:pb-6"
@@ -50,11 +52,18 @@ import Layout from "../layouts/Layout.astro";
       </nav>
     </Container>
     <Container id="experience">
-      <h2 class="text-2xl semi-bold mb-6 flex gap-x-3 items-center text-white">
+      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center text-white">
         <BriefcaseIcon class="size-6" />
         Experiencia laboral
       </h2>
       <Experience />
+    </Container>
+    <Container id="projects">
+      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center text-white">
+        <CodeIcon class="size-6" />
+        Proyectos
+      </h2>
+      <Project />
     </Container>
   </main>
 </Layout>
