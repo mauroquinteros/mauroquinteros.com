@@ -19,13 +19,20 @@ import About from "@/components/About.astro";
   description="Desarrollador backend"
 >
   <main class="px-4 lg:px-0">
-    <Container id="about" class="py-24 md:pt-40 md:pb-32 text-white">
+    <Container id="about" class="py-24 md:pt-40 md:pb-32">
       <img class="rounded-full size-12 mb-4" src="/logo.jpg" alt="logo" />
       <h1
         class="text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-4 lg:pb-6"
       >
         Hey, soy Mauro
-        <Badge>Disponible para trabajar</Badge>
+        <a
+          href="https://www.linkedin.com/in/mauroquinteroos/"
+          target="_blank"
+          rel="noopener"
+          class="hover:scale-105 transition"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
       </h1>
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
         +15 años de experiencia.
@@ -53,22 +60,22 @@ import About from "@/components/About.astro";
         </SocialBadge>
       </nav>
     </Container>
-    <Container id="experience">
-      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center text-white">
+    <Container id="experience" class="pb-24">
+      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center">
         <BriefcaseIcon class="size-6" />
         Experiencia laboral
       </h2>
       <Experience />
     </Container>
-    <Container id="projects">
-      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center text-white">
+    <Container id="projects" class="pb-24">
+      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-6" />
         Proyectos
       </h2>
       <Project />
     </Container>
-    <Container id="about">
-      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center text-white">
+    <Container id="about" class="pb-24">
+      <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center">
         <ProfileIcon class="size-6" />
         Sobre mí
       </h2>

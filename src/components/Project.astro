@@ -1,6 +1,9 @@
 ---
+import LinkButton from "./LinkButton.astro";
+import GithubIcon from "./icons/Github.astro";
 import NextjsIcon from "./icons/Nextjs.astro";
 import TailwindIcon from "./icons/Tailwind.astro";
+import RocketIcon from "./icons/Rocket.astro";
 
 const tags = {
   Next: {
@@ -25,32 +28,57 @@ const projects = [
     image: "/projects/svgl.webp",
     tags: [tags.Next, tags.Tailwind],
   },
+  {
+    title: "SVGL - A beautiful SVG library",
+    description:
+      "Created from scratch with Tailwind CSS and Next.js. It's a library of SVG icons that you can use in your projects. Optimized for performance and accessibility.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/svgl.webp",
+    tags: [tags.Next, tags.Tailwind],
+  },
 ];
 ---
 
-{
-  projects.map((project) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2">
-        {project.title}
-      </h3>
-      <p class="text-lg mb-4 text-pretty">{project.description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {project.tags.map((tag) => (
-          <li>
-            <span
-              class={`${tag.class} flex gap-x-2 items-center rounded-full text-xs px-2 py-1`}
-            >
-              {tag.name} <tag.icon class="size-4" />
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={project.image}
-        alt={project.description}
-      />
-    </article>
-  ))
-}
+<div class="flex flex-col gap-y-12">
+  {
+    projects.map((project) => (
+      <article>
+        <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2">
+          {project.title}
+        </h3>
+        <p class="text-lg mb-4 text-pretty">{project.description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {project.tags.map((tag) => (
+            <li>
+              <span
+                class={`${tag.class} flex gap-x-2 items-center rounded-full text-xs px-2 py-1`}
+              >
+                {tag.name} <tag.icon class="size-4" />
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          class="rounded shadow-2xl shadow-white/10"
+          src={project.image}
+          alt={project.description}
+        />
+        <footer class="flex justify-start items-center gap-x-4 mt-4">
+          {project.github && (
+            <LinkButton href={project.github}>
+              <GithubIcon class="size-6" />
+              Ver código fuente
+            </LinkButton>
+          )}
+          {project.link && (
+            <LinkButton href={project.link}>
+              <RocketIcon class="size-6" />
+              Ir al sitio web
+            </LinkButton>
+          )}
+        </footer>
+      </article>
+    ))
+  }
+</div>
