@@ -1,8 +1,46 @@
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px]">
-  <nav class="flex flex-row gap-x-10">
-    <a href="#top">Inicio</a>
-    <a href="#experience">Experiencia</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#contact">Contacto</a>
+---
+const navItems = [
+  {
+    title: "Inicio",
+    label: "inicio",
+    url: "#home",
+  },
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "#experience",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "#projects",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre mi",
+    url: "#about",
+  },
+];
+---
+
+<header
+  class="fixed top-0 z-10 flex justify-center items-center pt-5 w-full xl:w-[1120px]"
+>
+  <nav
+    class="flex px-5 py-2 rounded-full gap-x-4
+    text-sm font-medium text-slate-600 dark:text-slate-200
+    bg-white/60 dark:bg-gray-800/60 backdrop-blur shadow-lg ring-1 ring-white/10"
+  >
+    {
+      navItems.map((navItem) => (
+        <a
+          href={navItem.url}
+          aria-label={navItem.label}
+          class="transition-colors hover:text-[#004b85] dark:hover:text-[#76b7fb]"
+        >
+          {navItem.title}
+        </a>
+      ))
+    }
   </nav>
 </header>
