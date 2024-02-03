@@ -1,0 +1,55 @@
+---
+import MoonIcon from "./icons/Moon.astro";
+import SunIcon from "./icons/Sun.astro";
+---
+
+<button
+  class="relative text-slate-600 dark:text-slate-200 appearance-none border-none flex backdrop-blur-md"
+>
+  <MoonIcon
+    id="light"
+    data-toggle="dark"
+    class="toggle-icon size-6 transition-all"
+  />
+  <SunIcon
+    id="dark"
+    data-toggle="light"
+    class="toggle-icon size-6 transition-all absolute"
+  />
+</button>
+<script is:inline>
+  const darkMatchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const getThemePreference = () => {
+    if (
+      "theme" in localStorage &&
+      ["light", "dark"].includes(localStorage.theme)
+    ) {
+      return localStorage.theme;
+    }
+
+    return darkMatchMedia.matches ? "dark" : "light";
+  };
+
+  const setThemePreference = () => {
+    const themePreference = getThemePreference();
+
+    themePreference === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+
+    document.querySelectorAll(".toggle-icon").forEach((element) => {
+      element.style.scale = element.id === themePreference ? "1" : "0";
+    });
+  };
+
+  darkMatchMedia.addEventListener("change", setThemePreference);
+  setThemePreference();
+
+  document.querySelectorAll(".toggle-icon").forEach((element) => {
+    element.addEventListener("click", (event) => {
+      localStorage.setItem("theme", event.target.dataset.toggle);
+      setThemePreference();
+    });
+  });
+</script>
