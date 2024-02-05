@@ -3,28 +3,28 @@ import MoonIcon from "./icons/Moon.astro";
 import SunIcon from "./icons/Sun.astro";
 ---
 
-<button
-  class="relative text-slate-600 dark:text-slate-200 appearance-none border-none flex backdrop-blur-md"
->
-  <MoonIcon
+<div class="relative size-6">
+  <button
     id="light"
     data-toggle="dark"
-    class="toggle-icon size-6 transition-all"
-  />
-  <SunIcon
+    class="toggle-button absolute flex text-slate-600 dark:text-slate-200 appearance-none border-none transition-all backdrop-blur-md"
+  >
+    <MoonIcon class="size-6 pointer-events-none" />
+  </button>
+  <button
     id="dark"
     data-toggle="light"
-    class="toggle-icon size-6 transition-all absolute"
-  />
-</button>
+    class="toggle-button absolute flex text-slate-600 dark:text-slate-200 appearance-none border-none transition-all backdrop-blur-md"
+  >
+    <SunIcon class="size-6 pointer-events-none" />
+  </button>
+</div>
+
 <script is:inline>
   const darkMatchMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
   const getThemePreference = () => {
-    if (
-      "theme" in localStorage &&
-      ["light", "dark"].includes(localStorage.theme)
-    ) {
+    if (localStorage.theme) {
       return localStorage.theme;
     }
 
@@ -38,7 +38,7 @@ import SunIcon from "./icons/Sun.astro";
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
 
-    document.querySelectorAll(".toggle-icon").forEach((element) => {
+    document.querySelectorAll(".toggle-button").forEach((element) => {
       element.style.scale = element.id === themePreference ? "1" : "0";
     });
   };
@@ -46,7 +46,7 @@ import SunIcon from "./icons/Sun.astro";
   darkMatchMedia.addEventListener("change", setThemePreference);
   setThemePreference();
 
-  document.querySelectorAll(".toggle-icon").forEach((element) => {
+  document.querySelectorAll(".toggle-button").forEach((element) => {
     element.addEventListener("click", (event) => {
       localStorage.setItem("theme", event.target.dataset.toggle);
       setThemePreference();
