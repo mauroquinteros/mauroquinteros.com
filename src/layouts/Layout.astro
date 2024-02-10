@@ -1,6 +1,8 @@
 ---
 import "@fontsource-variable/onest";
 
+import { ViewTransitions } from "astro:transitions";
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -21,6 +23,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="text-[#030712] dark:text-white">
     <div class="fixed left-0 top-0 -z-10 h-full w-full">
@@ -32,30 +35,30 @@ const { title, description } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+
+      html {
+        font-family: "Onest Variable", system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      @media prefer-reduced-motion {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  :root {
-    color-scheme: light dark;
-  }
-
-  html {
-    font-family: "Onest Variable", system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  @media prefer-reduced-motion {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-</style>

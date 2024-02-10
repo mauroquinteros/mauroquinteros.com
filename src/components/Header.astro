@@ -4,22 +4,22 @@ import ThemeToggle from "./ThemeToggle.astro";
 const navItems = [
   {
     title: "Inicio",
-    label: "inicio",
+    label: "home",
     url: "#home",
   },
   {
     title: "Experiencia",
-    label: "experiencia",
+    label: "experience",
     url: "#experience",
   },
   {
     title: "Proyectos",
-    label: "proyectos",
+    label: "projects",
     url: "#projects",
   },
   {
     title: "Sobre mí",
-    label: "sobre mi",
+    label: "about",
     url: "#about",
   },
 ];
@@ -38,12 +38,53 @@ const navItems = [
         <a
           href={navItem.url}
           aria-label={navItem.label}
-          class="transition-colors hover:text-[#004b85] dark:hover:text-[#76b7fb]"
+          class="transition-colors hover:text-[#2563eb] dark:hover:text-[#2dd4bf]"
         >
           {navItem.title}
         </a>
       ))
     }
+    <ThemeToggle />
   </nav>
-  <ThemeToggle />
 </header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navList = document.querySelectorAll("header nav a");
+
+    const callbackObserver = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navList.forEach((navItem) => {
+            if (navItem.getAttribute("aria-label") == entry.target.id) {
+              navItem.classList.add("text-[#2563eb]");
+              navItem.classList.add("dark:text-[#2dd4bf]");
+            } else {
+              navItem.classList.remove("text-[#2563eb]");
+              navItem.classList.remove("dark:text-[#2dd4bf]");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callbackObserver, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.25,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    document.onvisibilitychange = () => {
+      document.visibilityState === "hidden"
+        ? observer.disconnect()
+        : sections.forEach((section) => {
+            observer.observe(section);
+          });
+    };
+  });
+</script>
