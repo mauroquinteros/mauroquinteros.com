@@ -7,14 +7,14 @@ import SunIcon from "./icons/Sun.astro";
   <button
     id="light"
     data-toggle="dark"
-    class="toggle-button absolute flex text-slate-600 dark:text-slate-200 appearance-none border-none transition-all"
+    class="theme-button absolute flex hover:text-blueribbon-600 dark:hover:text-turquoise-400 appearance-none border-none transition-all"
   >
     <MoonIcon class="size-5 pointer-events-none" />
   </button>
   <button
     id="dark"
     data-toggle="light"
-    class="toggle-button absolute flex text-slate-600 dark:text-slate-200 appearance-none border-none transition-all"
+    class="theme-button absolute flex hover:text-blueribbon-600 dark:hover:text-turquoise-400 appearance-none border-none transition-all"
   >
     <SunIcon class="size-5 pointer-events-none" />
   </button>
@@ -38,7 +38,7 @@ import SunIcon from "./icons/Sun.astro";
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
 
-    document.querySelectorAll(".toggle-button").forEach((element) => {
+    document.querySelectorAll(".theme-button").forEach((element) => {
       element.style.scale = element.id === themePreference ? "1" : "0";
     });
   };
@@ -46,7 +46,7 @@ import SunIcon from "./icons/Sun.astro";
   darkMatchMedia.addEventListener("change", setThemePreference);
   setThemePreference();
 
-  document.querySelectorAll(".toggle-button").forEach((element) => {
+  document.querySelectorAll(".theme-button").forEach((element) => {
     element.addEventListener("click", (event) => {
       localStorage.setItem("theme", event.target.dataset.toggle);
       setThemePreference();
