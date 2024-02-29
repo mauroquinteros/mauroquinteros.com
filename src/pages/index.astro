@@ -1,16 +1,12 @@
 ---
-import Badge from "@/components/Badge.astro";
 import BriefcaseIcon from "@/components/icons/Briefcase.astro";
 import CodeIcon from "@/components/icons/Code.astro";
 import Container from "@/components/Container.astro";
+import Hero from "@/components/Hero.astro";
 import Experience from "@/components/Experience.astro";
-import GithubIcon from "@/components/icons/Github.astro";
 import Layout from "@/layouts/Layout.astro";
-import LinkedInIcon from "@/components/icons/LinkedIn.astro";
-import MailIcon from "@/components/icons/Mail.astro";
 import ProfileIcon from "@/components/icons/Profile.astro";
 import Project from "@/components/Project.astro";
-import SocialBadge from "@/components/SocialBadge.astro";
 import About from "@/components/About.astro";
 ---
 
@@ -19,46 +15,8 @@ import About from "@/components/About.astro";
   description="Desarrollador backend"
 >
   <main class="px-4 lg:px-0">
-    <Container id="home" class="py-24 md:pt-40 md:pb-32">
-      <img class="rounded-full size-12 mb-4" src="/logo.jpg" alt="logo" />
-      <h1
-        class="text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-4 lg:pb-6"
-      >
-        Hey, soy Mauro
-        <a
-          href="https://www.linkedin.com/in/mauroquinteroos/"
-          target="_blank"
-          rel="noopener"
-          class="hover:scale-105 transition"
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        +15 años de experiencia.
-        <span class="text-yellow-200/90"
-          >Desarrollador Web y Creador de Contenido.</span
-        >
-        <span class="text-red-200/90"> De Barcelona, España 🇪🇸.</span>
-        <span class="opacity-85"
-          >Especializado en crear aplicaciones únicas.</span
-        >
-      </h2>
-
-      <nav class="flex flex-wrap gap-4 lg:gap-x-6 mt-8">
-        <SocialBadge href="https://www.linkedin.com/in/mauroquinteroos/">
-          <LinkedInIcon class="size-4 md:size-6" />
-          LinkedIn
-        </SocialBadge>
-        <SocialBadge href="https://github.com/mauroquinteroos">
-          <GithubIcon class="size-4 md:size-6" />
-          Github
-        </SocialBadge>
-        <SocialBadge href="mailto:quinterosmauro0599@gmail.com">
-          <MailIcon class="size-4 md:size-6" />
-          hello@mauroquinteros.com
-        </SocialBadge>
-      </nav>
+    <Container id="home" class="py-24 md:py-40">
+      <Hero />
     </Container>
     <Container id="experience" class="pb-24 pt-16">
       <h2 class="text-3xl semi-bold mb-6 flex gap-x-3 items-center">
