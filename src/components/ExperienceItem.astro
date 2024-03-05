@@ -5,24 +5,23 @@ const { date, title, description, link } = Astro.props;
 ---
 
 <div
-  class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+  class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-turquoise-500 dark:bg-turquoise-500"
 >
 </div>
-<time class="mb-1 text-sm font-normal leading-none text-sky-200/80">{date}</time
->
-<h3 class="mt-2 text-lg font-semibold text-yellow-200/90">
+<h3 class="text-lg font-semibold text-blueribbon-600 dark:text-turquoise-500">
   {title}
 </h3>
-<p class="mb-4 text-base font-normal dark:text-gray-200 text-pretty">
+<p class="my-1 text-sm font-normal leading-none text-yellow-200">{date}</p>
+<p class="text-base text-pretty text-gray-800 dark:text-gray-300">
   {description}
 </p>
 {
   link && (
     <>
-      <LinkButton href={link}>
+      <LinkButton href={link} class="mt-4">
         Saber más
         <svg
-          class="w-3 h-3 ms-2 rtl:rotate-180"
+          class="size-4 rtl:rotate-180"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

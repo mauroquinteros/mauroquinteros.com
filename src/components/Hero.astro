@@ -1,47 +1,39 @@
 ---
-import Badge from "./Badge.astro";
 import SocialBadge from "./SocialBadge.astro";
 import GithubIcon from "./icons/Github.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
+import MailIcon from "./icons/Mail.astro";
 ---
 
-<div class="flex gap-x-4 items-center mb-6">
+<div class="flex gap-x-4 items-center mb-4 lg:mb-6">
   <img class="rounded-full size-16" src="/logo.jpg" alt="logo" />
-  <a
-    href="mailto:quinterosmauro0599@gmail.com"
-    target="_blank"
-    rel="noopener"
-    class="hover:scale-105 transition"
+  <h1
+    class="text-3xl md:text-4xl lg:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-turquoise-600 to-turquoise-200"
   >
-    <Badge>Disponible para trabajar</Badge>
-  </a>
+    Hola, soy Mauro
+  </h1>
 </div>
-<h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold pb-4 lg:pb-6">
-  Hola, soy Mauro
-</h1>
 
-<h2
-  class="text-base sm:text-xl text-wrap text-gray-800 dark:text-gray-300 max-w-[700px]"
->
-  3 años de experiencia.
-  <strong class="text-blueribbon-600 dark:text-turquoise-400 font-semibold"
-    >Desarrollador Backend</strong
-  >
-  <span>para el sector financiero.</span>
-  <span>
+<div class="text-lg sm:text-xl text-gray-800 dark:text-gray-300 max-w-[700px]">
+  <p>
+    +3 años de experiencia. <strong
+      class="text-blueribbon-600 dark:text-turquoise-500 font-semibold"
+      >Desarrollador Backend</strong
+    > para el sector financiero.
+  </p>
+  <p>
     Especializado en el desarrollo de <strong
-      class="text-blueribbon-600 dark:text-turquoise-400 font-semibold"
+      class="text-blueribbon-600 dark:text-turquoise-500 font-semibold"
       >APIs y servicios en la nube</strong
     >.
-  </span>
-  <br />
-  <span
-    >Apasionado por superar desafíos en la <strong
-      class="text-blueribbon-600 dark:text-turquoise-400 font-semibold"
+  </p>
+  <p>
+    Apasionado por superar desafíos en la <strong
+      class="text-blueribbon-600 dark:text-turquoise-500 font-semibold"
       >escalabilidad del producto</strong
-    > y mejorar la experiencia del usuario.</span
-  >
-</h2>
+    > y mejorar la experiencia del usuario.
+  </p>
+</div>
 
 <nav class="flex flex-wrap gap-4 lg:gap-x-6 mt-6">
   <SocialBadge href="https://www.linkedin.com/in/mauroquinteros/">
@@ -51,5 +43,9 @@ import LinkedInIcon from "./icons/LinkedIn.astro";
   <SocialBadge href="https://github.com/mauroquinteros/">
     <GithubIcon class="size-4" />
     Github
+  </SocialBadge>
+  <SocialBadge href="mailto:quinterosmauro0599@gmail.com">
+    <MailIcon class="size-4" />
+    Email
   </SocialBadge>
 </nav>
