@@ -1,0 +1,57 @@
+---
+import { skills } from "@/data/skills.json";
+import JavaScriptIcon from "./icons/skills/JavaScript.astro";
+import TypeScriptIcon from "./icons/skills/TypeScript.astro";
+import NestJSIcon from "./icons/skills/NestJS.astro";
+import JestIcon from "./icons/skills/Jest.astro";
+import FlaskIcon from "./icons/skills/Flask.astro";
+import PythonIcon from "./icons/skills/Python.astro";
+import PostgresIcon from "./icons/skills/Postgres.astro";
+import MySQLIcon from "./icons/skills/MySQL.astro";
+import GitIcon from "./icons/skills/Git.astro";
+import GolangIcon from "./icons/skills/Golang.astro";
+import MongodbIcon from "./icons/skills/Mongodb.astro";
+import HTMLIcon from "./icons/skills/HTML.astro";
+import CSSIcon from "./icons/skills/CSS.astro";
+import AWSIcon from "./icons/skills/AWS.astro";
+import ReactIcon from "./icons/skills/React.astro";
+import AngularIcon from "./icons/skills/Angular.astro";
+
+const skillIcons: Record<string, any> = {
+  JavaScriptIcon,
+  TypeScriptIcon,
+  NestJSIcon,
+  JestIcon,
+  FlaskIcon,
+  PythonIcon,
+  PostgresIcon,
+  MySQLIcon,
+  GitIcon,
+  GolangIcon,
+  MongodbIcon,
+  HTMLIcon,
+  CSSIcon,
+  AWSIcon,
+  ReactIcon,
+  AngularIcon,
+};
+---
+
+<div>
+  <div class="">
+    {
+      skills.map(({ name, iconName }) => {
+        const Icon = skillIcons[iconName];
+        return (
+          <div>
+            {Icon && (
+              <>
+                <Icon class="size-4" /> <span>{name}</span>
+              </>
+            )}
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
