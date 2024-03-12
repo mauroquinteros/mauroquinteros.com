@@ -1,0 +1,20 @@
+{
+  "skills": [
+    { "name": "JavaScript", "iconName": "JavaScriptIcon" },
+    { "name": "TypeScript", "iconName": "TypeScriptIcon" },
+    { "name": "NestJS", "iconName": "NestJSIcon" },
+    { "name": "Jest", "iconName": "JestIcon" },
+    { "name": "Flask", "iconName": "FlaskIcon" },
+    { "name": "Python", "iconName": "PythonIcon" },
+    { "name": "PostgreSQL", "iconName": "PostgresIcon" },
+    { "name": "MySQL", "iconName": "MySQLIcon" },
+    { "name": "Git", "iconName": "GitIcon" },
+    { "name": "Golang", "iconName": "GolangIcon" },
+    { "name": "MongoDB", "iconName": "MongodbIcon" },
+    { "name": "HTML", "iconName": "HTMLIcon" },
+    { "name": "CSS", "iconName": "CSSIcon" },
+    { "name": "AWS", "iconName": "AWSIcon" },
+    { "name": "React", "iconName": "ReactIcon" },
+    { "name": "Angular", "iconName": "AngularIcon" }
+  ]
+}

@@ -6,8 +6,8 @@ import Hero from "@/components/Hero.astro";
 import Experience from "@/components/Experience.astro";
 import Layout from "@/layouts/Layout.astro";
 import ProfileIcon from "@/components/icons/Profile.astro";
-import Project from "@/components/Project.astro";
 import About from "@/components/About.astro";
+import Skills from "@/components/Skills.astro";
 ---
 
 <Layout
@@ -25,19 +25,19 @@ import About from "@/components/About.astro";
       </h2>
       <Experience />
     </Container>
-    <Container id="projects" class="py-20">
-      <h2 class="text-3xl font-medium mb-6 flex gap-x-3 items-center">
-        <CodeIcon class="size-6" />
-        Proyectos
-      </h2>
-      <Project />
-    </Container>
     <Container id="about" class="py-20">
       <h2 class="text-3xl font-medium mb-6 flex gap-x-3 items-center">
         <ProfileIcon class="size-6" />
         Sobre mí
       </h2>
       <About />
+    </Container>
+    <Container id="skills" class="py-20">
+      <h2 class="text-3xl font-medium mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-6" />
+        skills
+      </h2>
+      <Skills />
     </Container>
   </main>
 </Layout>
