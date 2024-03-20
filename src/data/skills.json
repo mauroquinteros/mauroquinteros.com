@@ -7,7 +7,6 @@
     { "name": "Flask", "iconName": "FlaskIcon" },
     { "name": "Python", "iconName": "PythonIcon" },
     { "name": "PostgreSQL", "iconName": "PostgresIcon" },
-    { "name": "MySQL", "iconName": "MySQLIcon" },
     { "name": "Git", "iconName": "GitIcon" },
     { "name": "Golang", "iconName": "GolangIcon" },
     { "name": "MongoDB", "iconName": "MongodbIcon" },
